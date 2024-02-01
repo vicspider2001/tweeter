@@ -112,3 +112,9 @@ footer {
   background-color:grey;
   height: 5px;
 }
+
+.imgStyling {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
