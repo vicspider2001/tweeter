@@ -107,3 +107,8 @@ footer {
 .tweet-content {
   margin-top: 10px;
 }
+
+.hrStyling {
+  background-color:grey;
+  height: 5px;
+}
