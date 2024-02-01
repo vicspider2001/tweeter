@@ -1,0 +1,29 @@
+.navStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* This rule makes the children spread apart! */
+  height: 120px;
+  background-color: #4056A1;
+  padding-left: 1.5em;
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  color: #FFFFFF;
+  position: fixed;
+  width: 100%;
+  
+ 
+}
+
+.tweeterLogoStyle {
+  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-weight: 400;
+  font-style: normal;
+}
+
+.faviconStyle{
+  color: red;
+  position: absolute; /* This places the children in the top and right positions stated below */
+  top: 60px;
+  right: 120px;
+  
+}

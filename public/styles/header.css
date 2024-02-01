@@ -1,0 +1,21 @@
+.headerStyle {
+  height: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This rule makes the children spread apart! */
+  align-items: center;
+  background-color: #cc8800;
+  background-image:url("https://www.transparenttextures.com/patterns/arches.png");
+}
+
+.imageStyling {
+  margin-top: 10%;
+  margin-bottom: -50px;
+}
+
+.alignName {
+  color: white;
+
+}
+

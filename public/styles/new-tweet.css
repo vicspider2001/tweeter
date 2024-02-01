@@ -1,0 +1,109 @@
+.humming {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#tweet-text {
+  background-color: inherit;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  border-width: 5px;
+  resize: none;
+  
+}
+
+#buttonStyle {
+  background-color: #4056A1;
+  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-weight: 400;
+  font-style: normal;
+  color: #FFFFFF;
+  width: 110px;
+}
+
+.tweetZone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-tweet {
+  width: 100%;
+  margin: 0 auto; /* Center align to the body */
+}
+
+.counter {
+  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-weight: 400;
+  font-style: normal;
+}
+
+.redCounter {
+  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-weight: 400;
+  font-style: normal;
+  color:red;
+}
+
+.tweet {
+  border: 1px solid;
+  border-width: 5px;
+  padding: 15px;
+  margin: 10px;
+  width: 100%;
+  transition: box-shadow 0.3s;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+ 
+}
+
+.nameStyling{
+  color: lightgray;
+}
+
+.userNameStyling {
+  color:#777;
+  font-size: 1.5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.postCounts{
+  font-size: 1.2rem;
+}
+
+.icon i {
+  margin-right: 8px;
+  
+}
+
+.iconColor {
+  color:midnightblue;
+}
+
+.iconColor:hover {
+  color:chocolate;
+}
+
+.tweet-content {
+  margin-top: 10px;
+}
