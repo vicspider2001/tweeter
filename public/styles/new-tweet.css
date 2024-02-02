@@ -47,7 +47,7 @@
   color:red;
 }
 
-.tweet {
+#tweet {
   border: 1px solid;
   border-width: 5px;
   padding: 15px;
