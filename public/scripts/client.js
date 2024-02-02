@@ -51,14 +51,51 @@ const createTweetElement = (tweet) => {
         </div>
         
     </footer>
+    
   </article>`)
   return tweetElement;
 }
+
 $(document).ready(function() {
   
+
   for(const tweet of tweetData) {
     const tweetElement = createTweetElement(tweet);
     //append it to container
     $("#dynamicTweets").append(tweetElement);
-  }
+  };
+
+  //Form Submission
+  const $textarea = $("textarea")
+  $("form").on("submit", function(event) {
+    const characters = 140;
+    if($textarea.val().length > characters) {
+      alert("What are you humming about!");
+      
+    }
+
+    else if($textarea.val().length === 0) {
+      alert("Humming characters limit exceeded!");
+      
+    } else {
+      event.preventDefault();
+
+      //Form Data needed for submission
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $(this).serialize(), // Serialized form data (this)
+        success: function(response) {
+          console.log("Thanks for humming", response)
+          
+        },
+        error: function(error) {
+          console.log("An error has occured", error)
+        }
+      })
+    }
+    
+
+  })
+
 })
