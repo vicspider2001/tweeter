@@ -57,13 +57,27 @@ const createTweetElement = (tweet) => {
 }
 
 $(document).ready(function() {
-  
 
-  for(const tweet of tweetData) {
-    const tweetElement = createTweetElement(tweet);
-    //append it to container
-    $("#dynamicTweets").append(tweetElement);
+  const loadTweets = function() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      dataType: "json", // Specify that you expect JSON response
+      success: function(data) {
+        for(const tweet of data) {
+          const tweetElement = createTweetElement(tweet);
+          //append it to container
+          $("#dynamicTweets").append(tweetElement);
+        }
+      },
+      error: function(error) {
+        console.error("Error loading tweets:", error);
+      }
+    });
   };
+  // Call the loadTweets function on page load
+  loadTweets();
+
 
   //Form Submission
   const $textarea = $("textarea")
@@ -93,7 +107,10 @@ $(document).ready(function() {
           console.log("An error has occured", error)
         }
       })
-    }
+    };
+
+    
+
     
 
   })
