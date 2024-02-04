@@ -32,17 +32,27 @@ const createTweetElement = (tweet) => {
 }
 
 $(document).ready(function() {
-
+  const $textarea = $("textarea")
+  const characters = 140;
   const loadTweets = function() {
+    //Get new tweets from the database
     $.ajax({
       url: "/tweets",
       method: "GET",
       dataType: "json", // Specifies a JSON response
       success: function(data) {
+        //This line will clear the textarea value
+        $textarea.val(""); 
+
+        //Empty the previously appended tweets
+        $("#dynamicTweets").empty();
+
+        //Loop through the data
         for(const tweet of data) {
           const tweetElement = createTweetElement(tweet);
-          //append it to container
-          $("#dynamicTweets").append(tweetElement);
+          //append new tweets to container
+          $("#dynamicTweets").prepend(tweetElement);
+          
         }
       },
       error: function(error) {
@@ -56,8 +66,7 @@ $(document).ready(function() {
 
   //Form Submission
   
-  const $textarea = $("textarea")
-  const characters = 140;
+  
   $("form").on("submit", function(event) {
     if($textarea.val().length > characters) {
       alert("Humming characters limit exceeded!");
@@ -74,15 +83,16 @@ $(document).ready(function() {
           url: "/tweets",
           method: "POST",
           data: $(this).serialize(), // Serialized form data (this)
-         
           success: function(response) {
             console.log("Thanks for humming", response)
-            console.log(($(this)))
+            loadTweets();
+            
           },
           error: function(error) {
             console.log("An error has occured", error)
           }
         })
+
         
         
       };
