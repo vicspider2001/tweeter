@@ -5,6 +5,7 @@
  */
 const createTweetElement = (tweet) => {
   const result = timeago.format(tweet.created_at);
+  const safeText = $("<div>").text(tweet.content.text).html();
   const tweetElement = $(`<article id="tweet">
     <header class="user-info">
     <img src= ${tweet.user.avatars} class="imgStyling" alt="Image">
@@ -13,7 +14,7 @@ const createTweetElement = (tweet) => {
         <p class="nameStyling">${tweet.user.handle}</p>
     </div>
     </header>
-    <p class="tweet-content">${tweet.content.text}</p>
+    <p class="tweet-content">${safeText}</p>
     <hr class="hrStyling"/>
     <footer>
         <div class="postCounts">
