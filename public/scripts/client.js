@@ -55,34 +55,38 @@ $(document).ready(function() {
 
 
   //Form Submission
+  
   const $textarea = $("textarea")
+  const characters = 140;
   $("form").on("submit", function(event) {
-    const characters = 140;
     if($textarea.val().length > characters) {
-      alert("What are you humming about!");
-    }
-
-    else if($textarea.val().length === 0) {
       alert("Humming characters limit exceeded!");
+      return false // prevents opening of the tweets url
+    }
+    else if($textarea.val().length === 0) {
+      alert("What are you humming about!");
+      return false // prevents opening of the tweets url
       
     } else {
-      event.preventDefault();
-
-      //Form Data needed for submission
-      $.ajax({
-        url: "/tweets",
-        method: "POST",
-        data: $(this).serialize(), // Serialized form data (this)
-        success: function(response) {
-          console.log("Thanks for humming", response)
-          
-        },
-        error: function(error) {
-          console.log("An error has occured", error)
-        }
-      })
-    };
-
+        event.preventDefault();
+        //Form Data needed for submission
+        $.ajax({
+          url: "/tweets",
+          method: "POST",
+          data: $(this).serialize(), // Serialized form data (this)
+         
+          success: function(response) {
+            console.log("Thanks for humming", response)
+            console.log(($(this)))
+          },
+          error: function(error) {
+            console.log("An error has occured", error)
+          }
+        })
+        
+        
+      };
+      
   })
 
 })
