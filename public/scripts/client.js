@@ -3,33 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1706631449549
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1706717849549
-  }
-];
-
 const createTweetElement = (tweet) => {
+  const result = timeago.format(tweet.created_at);
   const tweetElement = $(`<article id="tweet">
     <header class="user-info">
     <img src= ${tweet.user.avatars} class="imgStyling" alt="Image">
@@ -42,7 +17,7 @@ const createTweetElement = (tweet) => {
     <hr class="hrStyling"/>
     <footer>
         <div class="postCounts">
-          <p> 10 days ago</p>
+          <p>(${result})</p>
         </div>
         <div class="icon">
           <span><i class="fa fa-comment iconColor"></i></span>
@@ -62,7 +37,7 @@ $(document).ready(function() {
     $.ajax({
       url: "/tweets",
       method: "GET",
-      dataType: "json", // Specify that you expect JSON response
+      dataType: "json", // Specifies a JSON response
       success: function(data) {
         for(const tweet of data) {
           const tweetElement = createTweetElement(tweet);
@@ -85,7 +60,6 @@ $(document).ready(function() {
     const characters = 140;
     if($textarea.val().length > characters) {
       alert("What are you humming about!");
-      
     }
 
     else if($textarea.val().length === 0) {
@@ -108,10 +82,6 @@ $(document).ready(function() {
         }
       })
     };
-
-    
-
-    
 
   })
 
