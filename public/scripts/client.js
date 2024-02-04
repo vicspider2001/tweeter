@@ -33,9 +33,11 @@ const createTweetElement = (tweet) => {
 }
 
 $(document).ready(function() {
-  const $textarea = $("textarea")
+  const $textarea = $("textarea");
+  const $errorMsg = $(".errorMessages");
   const characters = 140;
   const loadTweets = function() {
+   
     //Get new tweets from the database
     $.ajax({
       url: "/tweets",
@@ -69,21 +71,37 @@ $(document).ready(function() {
   
   
   $("form").on("submit", function(event) {
+    //Hide error message before validation
+    $errorMsg.slideUp();
+
     if($textarea.val().length > characters) {
-      alert("Humming characters limit exceeded!");
-      return false // prevents opening of the tweets url
+      //Text message for error
+      $errorMsg.text("Humming characters limit exceeded!");
+      //Display the error message with animation
+      $errorMsg.slideDown();
+
+      // prevents opening of the tweets url
+      return false 
     }
     else if($textarea.val().length === 0) {
-      alert("What are you humming about!");
-      return false // prevents opening of the tweets url
+      //Text message for error
+      $errorMsg.text("What are you humming about!");
+      //Display error message with animation
+      $errorMsg.slideDown();
+
+      // prevents opening of the tweets url
+      return false 
       
     } else {
         event.preventDefault();
+        //Hide error message
+        $errorMsg.slideUp();
         //Form Data needed for submission
         $.ajax({
           url: "/tweets",
           method: "POST",
-          data: $(this).serialize(), // Serialized form data (this)
+          // Serialized form data (this)
+          data: $(this).serialize(), 
           success: function(response) {
             console.log("Thanks for humming", response)
             loadTweets();
