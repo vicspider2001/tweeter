@@ -13,9 +13,9 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Screenshots
-!["Screenshot of tweet compose box"] (./tweetPix/Tweet-Compose-box.png)
-!["Screenshot of tweets"] (https://github.com/vicspider2001/tweeter/blob/master/tweetPix/Tweets.png)
-!["Screenshot of tweet mobile view"] (https://github.com/vicspider2001/tweeter/blob/master/tweetPix/Tweet%20mobile%20view.png)
+!["Screenshot of tweet compose box"](https://github.com/vicspider2001/tweeter/blob/master/tweetPix/Tweet-Compose-box.png)
+!["Screenshot of tweets"](https://github.com/vicspider2001/tweeter/blob/master/tweetPix/Tweets.png)
+!["Screenshot of tweet mobile view"](https://github.com/vicspider2001/tweeter/blob/master/tweetPix/Tweet-mobile-view.png)
 
 ## Dependencies
 
