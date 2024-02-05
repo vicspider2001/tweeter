@@ -3,15 +3,14 @@
   flex-direction: row;
   justify-content: space-between; /* This rule makes the children spread apart! */
   height: 120px;
-  background-color: #4056A1;
+  background-color: #cc8800;
+  background-image:url("https://www.transparenttextures.com/patterns/arches.png");
   padding-left: 1.5em;
   padding-top: 1.5em;
   padding-right: 1.5em;
   color: #FFFFFF;
-  position: fixed;
   width: 100%;
   
- 
 }
 
 .tweeterLogoStyle {
@@ -27,3 +26,5 @@
   right: 120px;
   
 }
+
+
