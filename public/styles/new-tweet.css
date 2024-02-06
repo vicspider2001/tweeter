@@ -11,12 +11,13 @@
   width: 100%;
   border-width: 5px;
   resize: none;
-  
+
 }
 
 #buttonStyle {
   background-color: #4056A1;
-  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-family: "Bungee", sans-serif;
+  /* Use Source Sans 3, degrade to sans-serif */
   font-weight: 400;
   font-style: normal;
   color: #FFFFFF;
@@ -32,20 +33,23 @@
 
 .new-tweet {
   width: 100%;
-  margin: 0 auto; /* Center align to the body */
+  margin: 0 auto;
+  /* Center align to the body */
 }
 
 .counter {
-  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-family: "Bungee", sans-serif;
+  /* Use Source Sans 3, degrade to sans-serif */
   font-weight: 400;
   font-style: normal;
 }
 
 .redCounter {
-  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-family: "Bungee", sans-serif;
+  /* Use Source Sans 3, degrade to sans-serif */
   font-weight: 400;
   font-style: normal;
-  color:red;
+  color: red;
 }
 
 #tweet {
@@ -55,7 +59,7 @@
   margin: 10px;
   width: 100%;
   margin-bottom: 25px;
-  
+
 }
 
 .user-info {
@@ -63,15 +67,15 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
- 
+
 }
 
-.nameStyling{
+.nameStyling {
   color: lightgray;
 }
 
 .userNameStyling {
-  color:#777;
+  color: #777;
   font-size: 1.5rem;
 }
 
@@ -89,21 +93,21 @@ footer {
   font-size: 1.2rem;
 }
 
-.postCounts{
+.postCounts {
   font-size: 1.2rem;
 }
 
 .icon i {
   margin-right: 8px;
-  
+
 }
 
 .iconColor {
-  color:midnightblue;
+  color: midnightblue;
 }
 
 .iconColor:hover {
-  color:chocolate;
+  color: chocolate;
 }
 
 .tweet-content {
@@ -111,7 +115,7 @@ footer {
 }
 
 .hrStyling {
-  background-color:grey;
+  background-color: grey;
   height: 5px;
 }
 
@@ -121,7 +125,7 @@ footer {
   margin-right: 10px;
 }
 
-.errorMessages{
+.errorMessages {
   display: none;
   background-color: #ffcccc;
   color: #cc0000;
@@ -131,13 +135,11 @@ footer {
   margin-bottom: 10px;
   margin-top: 15px;
   text-align: center;
-  width:70%;
-  
+  width: 70%;
+
 }
 
 
 #dynamicTweets article:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
-

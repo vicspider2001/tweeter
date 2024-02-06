@@ -28,94 +28,84 @@ const createTweetElement = (tweet) => {
         
     </footer>
     
-  </article>`)
+  </article>`);
   return tweetElement;
-}
+};
 
-$(document).ready(function() {
+$(document).ready(function () {
   const $textarea = $("textarea");
   const $errorMsg = $(".errorMessages");
   const characters = 140;
-  const loadTweets = function() {
-   
+  const loadTweets = function () {
     //Get new tweets from the database
     $.ajax({
       url: "/tweets",
       method: "GET",
       dataType: "json", // Specifies a JSON response
-      success: function(data) {
+      success: function (data) {
         //This line will clear the textarea value
-        $textarea.val(""); 
+        $textarea.val("");
 
         //Empty the previously appended tweets
         $("#dynamicTweets").empty();
 
         //Loop through the data
-        for(const tweet of data) {
+        for (const tweet of data) {
           const tweetElement = createTweetElement(tweet);
           //append new tweets to container
           $("#dynamicTweets").prepend(tweetElement);
           
         }
       },
-      error: function(error) {
+      error: function (error) {
         console.error("Error loading tweets:", error);
-      }
+      },
     });
   };
   // Call the loadTweets function on page load
   loadTweets();
 
-
   //Form Submission
-  
-  
-  $("form").on("submit", function(event) {
+
+  $("form").on("submit", function (event) {
     //Hide error message before validation
     $errorMsg.slideUp();
 
-    if($textarea.val().length > characters) {
+    if ($textarea.val().length > characters) {
       //Text message for error
       $errorMsg.text("Humming characters limit exceeded!");
       //Display the error message with animation
       $errorMsg.slideDown();
 
       // prevents opening of the tweets url
-      return false 
-    }
-    else if($textarea.val().length === 0) {
+      return false;
+    } else if ($textarea.val().length === 0) {
       //Text message for error
       $errorMsg.text("What are you humming about!");
       //Display error message with animation
       $errorMsg.slideDown();
 
       // prevents opening of the tweets url
-      return false 
-      
+      return false;
     } else {
-        event.preventDefault();
-        //Hide error message
-        $errorMsg.slideUp();
-        //Form Data needed for submission
-        $.ajax({
-          url: "/tweets",
-          method: "POST",
-          // Serialized form data (this)
-          data: $(this).serialize(), 
-          success: function(response) {
-            console.log("Thanks for humming", response)
-            loadTweets();
-            
-          },
-          error: function(error) {
-            console.log("An error has occured", error)
-          }
-        })
-
-        
-        
-      };
-      
-  })
-
-})
+      event.preventDefault();
+      //Hide error message
+      $errorMsg.slideUp();
+      //Form Data needed for submission
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        // Serialized form data (this)
+        data: $(this).serialize(),
+        success: function (response) {
+          console.log("Thanks for humming", response);
+          loadTweets();
+          $(".counter").text(characters)
+        },
+        error: function (error) {
+          console.log("An error has occured", error);
+        },
+      });
+    }
+  });
+});

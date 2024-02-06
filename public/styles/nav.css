@@ -1,30 +1,31 @@
 .navStyle {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* This rule makes the children spread apart! */
+  justify-content: space-between;
+  /* This rule makes the children spread apart! */
   height: 120px;
   background-color: #cc8800;
-  background-image:url("https://www.transparenttextures.com/patterns/arches.png");
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
   padding-left: 1.5em;
   padding-top: 1.5em;
   padding-right: 1.5em;
   color: #FFFFFF;
   width: 100%;
-  
+
 }
 
 .tweeterLogoStyle {
-  font-family: "Bungee", sans-serif; /* Use Source Sans 3, degrade to sans-serif */
+  font-family: "Bungee", sans-serif;
+  /* Use Source Sans 3, degrade to sans-serif */
   font-weight: 400;
   font-style: normal;
 }
 
-.faviconStyle{
+.faviconStyle {
   color: red;
-  position: absolute; /* This places the children in the top and right positions stated below */
+  position: absolute;
+  /* This places the children in the top and right positions stated below */
   top: 60px;
   right: 120px;
-  
+
 }
-
-
